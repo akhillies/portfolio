@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="spotLightShape2_DeepShadow">
+    <InjectablePayloads>
+        <Payload Id="TimelapseClouds:fluidShape3SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Matte 0
+Surface "renderman/cloudTest_set5/shaders/TimelapseClouds_HazeShape_rfm" "string VolPassid" [""] "string VolConversionClass" [""] "string rman__VolOutputFile" [""] "string rman__VolMap" [""] "float rman__indirectDiffuseSamples" [0] "float rman__indirectDiffuseMaxDistance" [1e+10] "__instanceid" ["renderman/cloudTest_set5/shaders/TimelapseClouds_HazeShape_rfm_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="TimelapseClouds:fluidShape1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Matte 0
+Surface "renderman/cloudTest_set5/shaders/TimelapseClouds_CloudsShape_rfm" "float textureTime" [2.5625] "string VolPassid" [""] "string VolConversionClass" [""] "string rman__VolOutputFile" [""] "string rman__VolMap" [""] "float rman__indirectDiffuseSamples" [0] "float rman__indirectDiffuseMaxDistance" [1e+10] "__instanceid" ["renderman/cloudTest_set5/shaders/TimelapseClouds_CloudsShape_rfm_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="TimelapseClouds:Haze/TimelapseClouds:HazeShape" PayloadId="TimelapseClouds:fluidShape3SG"/>
+        <Binding Key="TimelapseClouds:Clouds/TimelapseClouds:CloudsShape" PayloadId="TimelapseClouds:fluidShape1SG"/>
+    </TightBindings>
+</RenderManLookFile>
