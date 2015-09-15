@@ -1,4 +1,4 @@
-renderman/
-renderData/
-cache/
-autosave/
+renderman
+renderData
+cache
+autosave
